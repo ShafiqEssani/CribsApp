@@ -27,11 +27,18 @@ export class ListingComponent implements OnInit {
     //error => this.error = error.statusText
     //);
     
+    //subscription got from getAllCribs
     this.cribsService.getAllCribs()
       .subscribe(
-        data => this.cribs = data,
+        data => this.cribs = data, //populating cribs array
         error => this.error = error.statusText
         );
+
+    this.cribsService.newCribSubject
+    .subscribe(
+      //data => this.cribs.push(data) //pushing it on the last place
+      data => this.cribs = [data, ...this.cribs] //spreading for first place
+    )
 }
 
 }
