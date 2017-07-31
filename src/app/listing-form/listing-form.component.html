@@ -5,7 +5,7 @@
 
   <div class="panel-body">
 
-    <form #newCribForm="ngModel" (ngSubmit)="onCribSubmit(newCribForm.value)">
+    <form #newCribForm="ngForm" (ngSubmit)="onCribSubmit(newCribForm.value)">
       <div class="form-group col-sm-4">
         <label for="address" class="">Address</label>
         <input
@@ -37,7 +37,7 @@
           <option
             *ngFor="let type of propertyTypes"
             [value]="type">
-              {{ utilService.capitalize(type) }}
+              {{ type }}
           </option>
         </select>
       </div>
