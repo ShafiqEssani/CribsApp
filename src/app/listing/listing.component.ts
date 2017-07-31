@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CribsService } from './../services/cribs.service';
+import { UtilService } from './../services/util.service';
+
 import { Http } from '@angular/http'
 
 @Component({
@@ -12,8 +14,22 @@ export class ListingComponent implements OnInit {
 
   cribs: Array<any>;
   error: string;
+  sortFeild: string = 'price';
+  sortDirection: string = 'asc';
+  sortFields: Array<string> = [
+    'address',
+    'price',
+    'bedrooms',
+    'bathrooms',
+    'area',
+    'type'
+  ]
 
-  constructor(private http: Http, private cribsService: CribsService) { }
+  constructor(
+    private http: Http,
+    private cribsService: CribsService,
+    private utilService: UtilService
+  ) { }
 
   ngOnInit() {
     // this.http.get('data/cribs.json'), function(err,data)

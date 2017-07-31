@@ -8,21 +8,24 @@ import { ListingComponent } from './listing/listing.component';
 import { CardComponent } from './card/card.component';
 
 import { CribsService } from './services/cribs.service';
+import { UtilService } from './services/util.service';
 import { ListingFormComponent } from './listing-form/listing-form.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingComponent,
     CardComponent,
-    ListingFormComponent
+    ListingFormComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule
   ],
-  providers: [CribsService],
+  providers: [CribsService, UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
