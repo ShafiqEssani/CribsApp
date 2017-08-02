@@ -41,7 +41,7 @@
   </div>
 
   <div *ngFor="let crib of cribs | sortBy: [sortField, sortDirection]">
-    <app-card [crib]="crib" class="col-sm-3"></app-card>
+    <app-card [crib]="crib" class="col-sm-2"></app-card>
   </div>
   <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
 </div>
