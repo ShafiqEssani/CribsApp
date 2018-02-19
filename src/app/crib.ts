@@ -7,5 +7,7 @@ export interface Crib {
     bedrooms: number,
     bathroom: number,
     area: number,
-    image: string
+    image: string,
+    showDetails: boolean,
+    sortFeild: string
 }
